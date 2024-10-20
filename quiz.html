@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Application</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h1>Quiz App</h1>
+
+    <div class="quiz-status">
+      <div class="score"><i class="fas fa-star"></i> <span id="score">0</span></div>
+      <div class="timer"><i class="fas fa-clock"></i> <span id="timer">60</span> seconds</div>
+    </div>
+
+    <div class="question-container" id="question-container">
+      <div id="question" class="question"></div>
+    </div>
+
+    <div id="answers" class="answers flex">
+    </div>
+
+    <div id="result" class="result hidden">
+      <div id="result-message"></div>
+      <button id="restart" class="restart-btn" onclick="restartQuiz()"><i class="fas fa-redo"></i> Try Again</button>
+      <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> End App</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
