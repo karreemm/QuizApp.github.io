@@ -113,10 +113,11 @@ button:hover {
 }
 
 .error {
-    color: #ff4f4f;
+    color: #ffffff;
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: bold;
+    text-align: left;
 }
 
 .result {

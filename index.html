@@ -10,10 +10,11 @@
 <body>
 
   <div class="login-container">
-    <h1>Login</h1>
-    <div id="login-error" class="error hidden">Invalid username or password! Please check your input.</div>
+    <h1>Create Account</h1>
     <input type="text" id="username" placeholder="Username" required>
+    <div id="username-error" class="error hidden">Username must be at least 3 characters and have no spaces or underscores.</div>
     <input type="password" id="password" placeholder="Password" required>
+    <div id="password-error" class="error hidden">Password must be at least 8 characters long, including digits, and at least one lowercase and one uppercase letter.</div>
     <button id="login-button" type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
   </div>
 

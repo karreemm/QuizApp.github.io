@@ -1,5 +1,5 @@
 function validateUsername(username) {
-  return !/\s|_/.test(username); 
+  return !/\s|_/.test(username) && username.length >= 3; 
 }
 
 function validatePassword(password) {
@@ -11,7 +11,8 @@ function login(event) {
 
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
-  const errorElement = document.getElementById('login-error');
+  const errorUsername = document.getElementById('username-error');
+  const errorPassword = document.getElementById('password-error');
 
   const isUsernameValid = validateUsername(username);
   const isPasswordValid = validatePassword(password);
@@ -19,12 +20,18 @@ function login(event) {
   console.log("Login attempt:", { username, password, isUsernameValid, isPasswordValid }); // Debug log
 
   if (isUsernameValid && isPasswordValid) {
-    errorElement.classList.add('hidden');
+    errorPassword.classList.add('hidden');
+    errorUsername.classList.add('hidden');
     document.querySelector('.login-container').classList.add('hidden');
     document.getElementById('topic-selection').classList.remove('hidden');
   } else {
     console.log("Invalid credentials");
-    errorElement.classList.remove('hidden');
+    if (!isUsernameValid) {
+      errorUsername.classList.remove('hidden');
+    }
+    if (!isPasswordValid) {
+      errorPassword.classList.remove('hidden');
+    }
     document.getElementById('username').value = '';
     document.getElementById('password').value = '';
   }
