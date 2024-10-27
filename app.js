@@ -11,7 +11,11 @@ const topics = {
       { question: "What is the chemical symbol for lead?", answers: ["Ld", "Pb", "Le"], correct: 1, difficulty: 'hard' },
       { question: "What is the chemical symbol for mercury?", answers: ["Hg", "Me", "Hy"], correct: 0, difficulty: 'easy' },
       { question: "What is the chemical symbol for copper?", answers: ["Co", "Cu", "Cr"], correct: 1, difficulty: 'medium' },
-      { question: "What is the chemical symbol for potassium?", answers: ["Po", "Pa", "K"], correct: 2, difficulty: 'hard' }
+      { question: "What is the chemical symbol for potassium?", answers: ["Po", "Pa", "K"], correct: 2, difficulty: 'hard' },
+      { question: "What is the chemical symbol for sodium?", answers: ["So", "Sa", "Na"], correct: 2, difficulty: 'easy' },
+      { question: "What is the chemical symbol for calcium?", answers: ["Ca", "Co", "Ce"], correct: 0, difficulty: 'medium' },
+      { question: "What is the chemical symbol for magnesium?", answers: ["Mg", "Ma", "Me"], correct: 0, difficulty: 'hard' },
+      { question: "What is the chemical symbol for zinc?", answers: ["Zn", "Zi", "Zc"], correct: 0, difficulty: 'easy' },
     ],
     physics: [
       { question: "What is the speed of light?", answers: ["300,000 km/s", "150,000 km/s", "600,000 km/s"], correct: 0, difficulty: 'easy' },
@@ -25,13 +29,17 @@ const topics = {
       { question: "What is the unit of charge?", answers: ["Ampere", "Coulomb", "Ohm"], correct: 1, difficulty: 'hard' },
       { question: "What is the unit of frequency?", answers: ["Hertz", "Watt", "Newton"], correct: 0, difficulty: 'easy' },
       { question: "What is the unit of force?", answers: ["Joule", "Watt", "Newton"], correct: 2, difficulty: 'medium' },
-      { question: "What is the unit of voltage?", answers: ["Ampere", "Ohm", "Volt"], correct: 2, difficulty: 'easy' }
+      { question: "What is the unit of voltage?", answers: ["Ampere", "Ohm", "Volt"], correct: 2, difficulty: 'easy' },
+      { question: "What is the unit of work?", answers: ["Joule", "Watt", "Newton"], correct: 0, difficulty: 'medium' },
+      { question: "What is the unit of magnetic field?", answers: ["Tesla", "Watt", "Newton"], correct: 0, difficulty: 'hard' },
+      { question: "What is the unit of capacitance?", answers: ["Farad", "Watt", "Newton"], correct: 0, difficulty: 'easy' },
+      { question: "What is the unit of inductance?", answers: ["Henry", "Watt", "Newton"], correct: 0, difficulty: 'medium' },
     ]
   };
   
   let score = 0;
   let currentQuestionIndex = 0;
-  let totalQuestions = 5; 
+  let totalQuestions = 10; 
   let timeRemaining = 60;
   let timerInterval;
   
@@ -128,6 +136,7 @@ const topics = {
     answersElement.classList.remove('hidden');
     answersElement.classList.add('flex');
     questionElement.classList.remove('hidden');
+    questionContainer.classList.remove('hidden');
     
     startQuiz();
   }
